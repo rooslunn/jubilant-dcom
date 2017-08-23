@@ -17,6 +17,6 @@ class Note extends Model
 
     public function user()
     {
-        return $this->belongsTo('App\Model\User', 'foreign_key');
+        return $this->belongsTo('App\Models\User', 'foreign_key');
     }
 }

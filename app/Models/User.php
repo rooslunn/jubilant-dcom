@@ -17,6 +17,6 @@ class User extends Model
 
     public function notes()
     {
-        return $this->hasMany('App\Model\Note');
+        return $this->hasMany('App\Models\Note');
     }
 }
