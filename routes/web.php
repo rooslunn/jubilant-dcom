@@ -23,4 +23,6 @@ $app->group(['prefix' => 'user/', 'middleware' => 'auth'], function ($app) {
 
 $app->group(['prefix' => 'user/note/', 'middleware' => 'auth'], function ($app) {
     $app->post('/create', 'CreateNote');
+    $app->put('/update', 'UpdateNote');
+    $app->get('/list', 'ListNotes');
 });

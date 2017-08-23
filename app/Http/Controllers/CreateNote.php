@@ -34,9 +34,6 @@ class CreateNote extends Controller
         ]);
 
         $user = User::where('token', $request->input('token'))->first();
-        if (!$user) {
-            return FailResponse::create(['User not found']);
-        }
 
         try {
             $note= $user->notes()->save($note);
