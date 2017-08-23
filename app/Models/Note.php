@@ -11,12 +11,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class Note extends Model
 {
-    protected $fillable = ['email', 'password', 'token'];
+    protected $fillable = ['title', 'description'];
 
-    public function notes()
+    public function user()
     {
-        return $this->hasMany('App\Model\Note');
+        return $this->belongsTo('App\Model\User', 'foreign_key');
     }
 }

@@ -20,3 +20,7 @@ $app->post('/register', 'RegisterUser');
 $app->group(['prefix' => 'user/', 'middleware' => 'auth'], function ($app) {
     $app->get('/details', 'UserDetails');
 });
+
+$app->group(['prefix' => 'user/note/', 'middleware' => 'auth'], function ($app) {
+    $app->get('/create', 'CreateNote');
+});
