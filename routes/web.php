@@ -18,5 +18,5 @@ $app->get('/', function () use ($app) {
 $app->post('/register', 'RegisterUser');
 
 $app->group(['prefix' => 'user/', 'middleware' => 'auth'], function ($app) {
-    $app->get('/details', 'ShowAbout');
+    $app->get('/details', 'UserDetails');
 });
