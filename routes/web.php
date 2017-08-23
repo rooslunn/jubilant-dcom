@@ -15,6 +15,8 @@ $app->get('/', function () use ($app) {
     return $app->version();
 });
 
-$app->group(['prefix' => 'api/'], function ($app) {
-    $app->get('/about', 'ShowAbout');
+$app->post('/register', 'RegisterUser');
+
+$app->group(['prefix' => 'user/', 'middleware' => 'auth'], function ($app) {
+    $app->get('/details', 'ShowAbout');
 });
